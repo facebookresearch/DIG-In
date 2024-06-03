@@ -1,3 +1,5 @@
+**Update:** Annotations corresponding to the paper [Towards Geographic Inclusion in the Evaluation of Text-to-Image Models](https://arxiv.org/abs/2405.04457) may be found [here](https://github.com/facebookresearch/DIG-In/blob/main/task2_geode.csv).
+
 # DIG In: Evaluating Disparities in Image Generation with Indicators for Geographic Diversity
 
 This library contains code for measuring disparities in text-to-image generative models as introduced in [DIG In: Evaluating Disparities in Image Generations with Indicators for Geographic Diversity](https://arxiv.org/abs/2308.06198). 
