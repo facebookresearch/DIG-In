@@ -1,0 +1,86 @@
+DATA:
+  TRAIN: ('imagenet',)
+  TEST: ('imagenet',)
+  NUM_CLASSES: 1000
+  PATH: './datasets'
+  DATA_DIR: './data'
+LOSS:
+  LOSS: 'xentropy'
+  LABEL_SMOOTHING: 0.1
+INPUT:
+  INTERPOLATION: 4
+AUG:
+  MIXUP_PROB: 1.0
+  MIXUP: 0.8
+  MIXCUT: 1.0
+  TIMM_AUG:
+    USE_TRANSFORM: True
+    RE_COUNT: 1
+    RE_MODE: pixel
+    RE_SPLIT: False
+    RE_PROB: 0.25
+    AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+    HFLIP: 0.5
+    VFLIP: 0.0
+    COLOR_JITTER: 0.4
+DATALOADER:
+  BSZ: 256
+  RE: 'no'
+  WORKERS: 16
+OPTIM:
+  OPT: 'adamw'
+  LR: 5e-4
+  MOM: 0.9
+  NU: 1.0
+  WD: 0.05
+  EPOCHS: 300
+  WARMUP: 0
+  DROP_FREQ: 30
+  DROP_FACTOR: 10.0
+  VAL: 0
+  INC_REG: 1.0
+  DEC_REG: -1.0
+  INC_COS: 0.1
+  DEC_COS: -0.1
+  INC_FACTOR: 2.0
+  DEC_FACTOR: 4.0
+  TEST_FREQ: 1000
+  ADAM:
+    BETA1: 0.9
+    BETA2: 0.999
+  SASA:
+    LEAK_RATIO: 8
+    SIGNIF: 0.05
+    N: 1000
+    DELTA: 0.02
+    MODE: 'olbm'
+    LOGSTATS: 10
+    TESTS_PER_EPOCH: 1
+  LS:
+    GAMMA: 0.01
+    SDC: 0.05
+    INC: 2.0
+    DEC: 0.5
+    MAX: 2
+    IGN: 0
+    EVAL: 1
+    DIR: 'g'
+    COS: 0
+MODEL:
+  ARCH: "deit_base_patch16_224"
+  NONLINEARITY: "celu"
+  MODEL_PATH: ""
+  PRETRAINED: False
+  TRANSFORMER:
+    DROP: 0.0
+    DROP_PATH: 0.1
+SOLVER:
+  LR_POLICY: 'cosine'
+  WARMUP_FACTOR: 0.002
+  WARMUP_EPOCHS: 5.0
+  MIN_LR: 0.00001
+OUTPUT_DIR: "/tmp"
+BACKUP_LOG_DIR: ""
+LOG_FREQ: 100
+EVALUATE: False
+ONLY_SAVE_LAST: 0

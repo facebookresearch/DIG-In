@@ -1,0 +1,61 @@
+DATA:
+  TRAIN: ('train.yaml',)
+  TEST: ('val.yaml',)
+  NUM_CLASSES: 113
+  PATH: './datasets'
+  DATA_DIR: './data'
+LOSS:
+  LOSS: 'xentropy'
+DATALOADER:
+  BSZ: 256
+  RE: 'no'
+  WORKERS: 16
+OPTIM:
+  OPT: 'sasa'
+  LR: 1.0
+  MOM: 0.9
+  NU: 1.0
+  WD: 1e-4
+  EPOCHS: 300
+  WARMUP: 0
+  DROP_FREQ: 50
+  DROP_FACTOR: 10.0
+  VAL: 0
+  INC_REG: 1.0
+  DEC_REG: -1.0
+  INC_COS: 0.1
+  DEC_COS: -0.1
+  INC_FACTOR: 2.0
+  DEC_FACTOR: 4.0
+  TEST_FREQ: 1000
+  ADAM:
+    BETA1: 0.9
+    BETA2: 0.999
+  SASA:
+    LEAK_RATIO: 8
+    SIGNIF: 0.05
+    N: 1000
+    DELTA: 0.02
+    MODE: 'olbm'
+    LOGSTATS: 10
+    TESTS_PER_EPOCH: 1
+  LS:
+    GAMMA: 0.01
+    SDC: 0.05
+    INC: 2.0
+    DEC: 0.5
+    MAX: 2
+    IGN: 0
+    EVAL: 1
+    DIR: 'g'
+    COS: 0
+MODEL:
+  ARCH: "resnet18"
+  NONLINEARITY: "celu"
+  MODEL_PATH: ""
+  PRETRAINED: True
+OUTPUT_DIR: "/tmp"
+BACKUP_LOG_DIR: ""
+LOG_FREQ: 10
+EVALUATE: False
+ONLY_SAVE_LAST: 0
